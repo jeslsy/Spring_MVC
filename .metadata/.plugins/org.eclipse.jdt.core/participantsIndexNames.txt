@@ -1,0 +1,5 @@
+INDEX VERSION 1.131
+C:\Users\CICS\eclipse-workspace\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\2754367593.index
+\SampleSpringYse\src\main\java
+C:\Users\CICS\eclipse-workspace\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\225126360.index
+\SampleSpringYse\src\main\java

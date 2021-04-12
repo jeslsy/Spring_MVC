@@ -1,0 +1,40 @@
+package sample.spring.yse;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.servlet.ModelAndView;
+
+@Controller
+public class BookController {
+	// 10. 책 입력 기능 컨트롤러 서비스 빈 추가
+	@Autowired
+	BookService bookService;
+	
+	// 0. Get 방식 정의
+	// /create 주소가 GET방식으로 입력될때
+	// book/create 경로 뷰 보여줌.
+	@RequestMapping(value="/create", method = RequestMethod.GET)
+	public ModelAndView create() {
+	    return new ModelAndView("book/create");
+	}
+	
+	
+	// 11. 책 입력 기능 컨트롤러 메소드 추가 
+	@RequestMapping(value = "/create", method = RequestMethod.POST)
+	public ModelAndView createPost(@RequestParam Map<String, Object> map) {
+	    ModelAndView mav = new ModelAndView();
+
+	    String bookId = this.bookService.create(map);
+	    if (bookId == null) {
+	        mav.setViewName("redirect:/create");
+	    }else {
+	        mav.setViewName("redirect:/detail?bookId=" + bookId); 
+	    }  
+
+	    return mav;
+	}
+	
+	
+}

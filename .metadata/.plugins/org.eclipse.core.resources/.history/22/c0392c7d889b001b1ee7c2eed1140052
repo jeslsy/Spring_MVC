@@ -1,0 +1,21 @@
+package sample.spring.yse;
+
+import java.util.Map;
+
+import org.mybatis.spring.SqlSessionTemplate;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Repository;
+
+
+
+// 4. 책 DAO 클래스 생성
+@Repository
+public class BookDao {
+	 @Autowired
+	 SqlSessionTemplate sqlSessionTemplate;
+	 
+	 // 5. 책 데이터 입력 쿼리 실행하는 DAO메소드 만듬
+	 public int insert(Map<String, Object> map) {
+		  return this.sqlSessionTemplate.insert("book.insert", map);
+		}
+}

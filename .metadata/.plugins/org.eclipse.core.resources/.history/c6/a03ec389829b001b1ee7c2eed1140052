@@ -1,0 +1,17 @@
+package sample.spring.yse;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+@Service
+public class BookServiceImpl implements BookService {
+	@Autowired
+	BookDao bookDao;
+	
+	@Override
+	public String create(Map<String, Object> map) {
+		int affectRowCoount = this.bookDao.insert(map);
+	}
+ 
+
+}
