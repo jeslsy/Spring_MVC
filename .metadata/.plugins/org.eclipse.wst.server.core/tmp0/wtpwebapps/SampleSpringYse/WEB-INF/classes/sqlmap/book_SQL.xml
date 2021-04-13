@@ -1,6 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
+<!-- 입력2. 책 매퍼 XML 생성 -->
 <!DOCTYPE  mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="book">
+
+	<!-- 입력 3. 책 입력 기능 쿼리 작성 -->
 	<insert id="insert" parameterType="hashMap" useGeneratedKeys="true" keyProperty="book_id">  
 	    <![CDATA[
 	    insert into book

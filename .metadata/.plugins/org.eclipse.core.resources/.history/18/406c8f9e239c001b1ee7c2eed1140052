@@ -11,12 +11,7 @@ import org.springframework.web.servlet.ModelAndView;
 
 @Controller
 public class BookController {
-	// 입력 10. 책 입력 기능 컨트롤러 서비스 빈 추가 : 입력 기능 서비스 호출 위한것.
-	/*
-	 * 서비스 호출 위해 BookService 의존성 주입
-	 * 이때 BookService 인터페이스가 사용되었음.
-	 * 
-	 * */
+	// 10. 책 입력 기능 컨트롤러 서비스 빈 추가
 	@Autowired
 	BookService bookService;
 	
@@ -29,7 +24,7 @@ public class BookController {
 	}
 	
 	
-	// 입력 11. 책 입력 기능 컨트롤러 메소드 추가 
+	// 11. 책 입력 기능 컨트롤러 메소드 추가 
 	@RequestMapping(value = "/create", method = RequestMethod.POST)
 	public ModelAndView createPost(@RequestParam Map<String, Object> map) {
 	    ModelAndView mav = new ModelAndView();
